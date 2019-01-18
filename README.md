@@ -27,6 +27,40 @@ create()
 update()
 remove()
 
+##react基础语法
+组件：
+使用类extends React.Component的方法,如果组件里面只有render函数，可以使用函数的方法来定义组件
+需要render
+最终需要export暴露出去
+组件之间传递参数使用props
+view层：
+1.直接写html代码，实际执行的是js语法
+2.Class 要写成 ClassName
+3.变量用{}包裹
+
+渲染列表使用.map函数
+constructor构造函数里面记得使用super(props)
+State是一个不可变的，要用this.setState来获取
+noClick={this.函数名}
+.bind改变this
+
+生命周期
+初始化生命周期
+更新重新渲染生命周期
+卸载的生命周期
+
+##ui组件库
+`npm install antd-mobile --save`
+引入
+`import 'antd-mobile/dist/antd-mobile.css';`
+按需加载组件
+安装babel-plugin-import来按需加载css
+`npm install babel-plugin-import --save-dev`
+配置：package.json里面添加
+`
+    "plugins":[["import", { "libraryName": "antd-mobile", "style": "css" }]]
+`
+
 
 
 
