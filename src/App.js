@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button , List } from 'antd-mobile';                    //按需加载组件
 import 'antd-mobile/lib/date-picker/style/css';        // 加载 CSS
+import {addGun} from './index-redux'
 
 class App extends React.Component{
   render(){
@@ -10,9 +11,26 @@ class App extends React.Component{
           <h2>独立团：{boss}</h2>
           <一营 boss="张大喵"></一营>
           <骑兵连 boss="孙德胜"></骑兵连>
+            <Gun store = {this.props.store}/>
         </div>
         )
   }
+}
+class Gun extends React.Component{
+    // constructor(props){
+    //     super(props)
+    // }
+    render(){
+        const store = this.props.store;
+        const num = store.getState();
+        return (
+            <div>
+                <h1>现在有机枪{num}把</h1>
+                <button onClick={()=>store.dispatch(addGun())}>申请武器</button>
+            </div>
+            )
+
+    }
 }
 function 骑兵连(props) {
     return <h2>骑兵连连长：{props.boss}</h2>

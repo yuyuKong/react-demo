@@ -61,6 +61,18 @@ noClick={this.函数名}
     "plugins":[["import", { "libraryName": "antd-mobile", "style": "css" }]]
 `
 
+##redux
+######单一状态
+######和react是解耦的，在vue,angular里面也可以
+
+安装
+`npm install redus --save`]
+引入
+`import {createStore} from 'redux';`
+新建：const store = createStore(counter);
+派发：store.dispatch
+监听：store.subscribe
+
 
 
 

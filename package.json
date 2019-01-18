@@ -116,7 +116,15 @@
     "presets": [
       "react-app"
     ],
-    "plugins":[["import", { "libraryName": "antd-mobile", "style": "css" }]]
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd-mobile",
+          "style": "css"
+        }
+      ]
+    ]
   },
   "devDependencies": {
     "babel-plugin-import": "^1.11.0"
