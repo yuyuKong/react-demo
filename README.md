@@ -13,6 +13,22 @@
 ### `npm install -g nodemon`  监听路由和响应内容，自动重启
 ###`nodemon server.js`
 
+##mongodb     存储json
+1.在官网下载安装mongodb数据库
+2.`npm install mongoose --save`安装库
+
+##mongoose
+1.引入
+2.连接  .connect()
+3.建立集合  文档   mongoose.model("名称",new mongoose.Schema({字段名：{type:数据类型，require:是否必须}}))
+4.增删改查操作
+find()  findOne()
+create()
+update()
+remove()
+
+
+
 
 
 
