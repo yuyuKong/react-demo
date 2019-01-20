@@ -21,3 +21,11 @@ export function addGun() {
 export function subGun() {
     return {type:SUB_GUN};
 }
+//这里传递一个参数dispatch  返回的不是对象，而是函数
+export function subGunAsync() {
+    return dispatch=>{
+        setTimeout(()=>{
+            dispatch(subGun())
+        },2000)
+    }
+}

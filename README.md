@@ -56,10 +56,18 @@ noClick={this.函数名}
 按需加载组件
 安装babel-plugin-import来按需加载css
 `npm install babel-plugin-import --save-dev`
+
+`npm install  @babel/plugin-proposal-decorators --save-dev`
 配置：package.json里面添加
 `
     "plugins":[["import", { "libraryName": "antd-mobile", "style": "css" }]]
 `
+
+`"plugins": [
+       ["@babel/plugin-proposal-decorators", { "legacy": true }]
+     ]
+`
+
 
 ##redux
 ######单一状态
@@ -73,7 +81,41 @@ noClick={this.函数名}
 派发：store.dispatch
 监听：store.subscribe
 
+######插件  中间件redux-thunk  处理异步
+`npm install redux-thunk --save`
+applyMiddleware
+这样可以直接返回函数
+这个插件主要是修改action的书写方式，使得可以返回函数，异步执行
+######调试工具
+`npm install redux-devtools-extension`
 
+####react-redux
+
+`npm install react-reudx --save`
+
+Provide  Connet
+
+抛弃掉dispatch,也不需要传递所有参数给组件，只需要传递store，组件中不需要接收，不需要subscribe
+
+######conent装饰器  精简代码
+`npm install babel-plugin-transform-decorators-legacy --save-dev`
+
+在package.json里面的babel中配置
+"plugins":["transform-decorators-legacy"]
+
+
+###react-router
+`npm install react-router-dom --save`
+
+BrowserRouter  包裹所有应用
+
+Route    路由  path / component
+
+Link     用于跳转  to
+
+Redirect   用于重定向  to
+
+Switch     包裹所有path  匹配第一个路由 可用于404页面
 
 
 

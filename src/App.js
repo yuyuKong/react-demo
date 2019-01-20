@@ -1,7 +1,17 @@
 import React from 'react';
 import { Button , List } from 'antd-mobile';                    //按需加载组件
 import 'antd-mobile/lib/date-picker/style/css';        // 加载 CSS
-import {addGun} from './index-redux'
+import { connect } from 'react-redux';
+import {addGun ,subGun , subGunAsync } from './index-redux';
+
+//使用babel-plugin-transform-decorators-legacy  connet装饰器  注意放到类前面
+//将store里面的属性和方法放在props里面   connet()里面有四个参数  最重要的是属性和方法两个
+@connect(
+    //你要什么属性放在props里面
+    state=>({ num:state }),
+    //你要什么方法，放在props里面  自动dispatch
+    {addGun ,subGun , subGunAsync }
+)
 
 class App extends React.Component{
   render(){
@@ -11,7 +21,7 @@ class App extends React.Component{
           <h2>独立团：{boss}</h2>
           <一营 boss="张大喵"></一营>
           <骑兵连 boss="孙德胜"></骑兵连>
-            <Gun store = {this.props.store}/>
+            <Gun num={this.props.num}  addGun={this.props.addGun} subGun={this.props.subGun} subGunAsync={this.props.subGunAsync}/>
         </div>
         )
   }
@@ -21,12 +31,22 @@ class Gun extends React.Component{
     //     super(props)
     // }
     render(){
-        const store = this.props.store;
-        const num = store.getState();
+        // const store = this.props.store;
+        // const num = store.getState();
+        const addGun = this.props.addGun;
+        const subGun = this.props.subGun;
+        const subGunAsync = this.props.subGunAsync;
+        console.log(this.props)
         return (
             <div>
-                <h1>现在有机枪{num}把</h1>
-                <button onClick={()=>store.dispatch(addGun())}>申请武器</button>
+                <h1>现在有机枪{this.props.num}把</h1>
+                {/*<button onClick={()=>store.dispatch(addGun())}>申请武器</button>*/}
+                {/*<button onClick={()=>store.dispatch(subGun())}>上交武器</button>*/}
+                {/*<button onClick={()=>store.dispatch(subGunAsync())}>拖两天再给</button>*/}
+                {/*不需要使用dispatch方法*/}
+                <button onClick={addGun}>申请武器</button>
+                <button onClick={subGun}>上交武器</button>
+                <button onClick={subGunAsync}>拖两天再给</button>
             </div>
             )
 
