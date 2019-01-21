@@ -121,5 +121,21 @@ Switch     包裹所有path  匹配第一个路由 可用于404页面
 `import { combineReducers } from 'redux'`
 
 
+###axios  接受发送数据请求
+
+`npm install axios --save`
+
+注意ajax不支持跨域，所以要使用代理proxy在package.json里面配置后台服务器的地址做转发
+
+拦截器
+可以用来做加载中动画，也就是只要有请求和响应就会执行
+`axios.interceptors.request.use(function(confing){
+    请求的动作
+    return config
+})`
+`axios.interceptors.response.use(function(confing){
+    响应的动作
+    return config
+    })`
 
 

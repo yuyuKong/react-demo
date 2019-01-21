@@ -14,12 +14,15 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';               //引入react-redux
 // import { counter ,addGun ,subGun ,subGunAsync} from './index-redux';
 // import { counter } from './index-redux';
-import reducers from './reducer'
+import reducers from './reducer'   //引入合并的reducer
+import './axios-config'   //引入拦截器
 
 import './index.css';
 
 import Auth from './Auth';
 import Dashboard from './Dashboard';
+
+
 const store = createStore(reducers,applyMiddleware(thunk));
 console.log(store.getState())
 /*import {createStore} from 'redux';
