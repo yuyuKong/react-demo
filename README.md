@@ -117,6 +117,9 @@ Redirect   用于重定向  to
 
 Switch     包裹所有path  匹配第一个路由 可用于404页面
 
+当有多个reducer的时候，新建reducer.js,使用combineReducers合并所有的reducer
+`import { combineReducers } from 'redux'`
+
 
 
 
