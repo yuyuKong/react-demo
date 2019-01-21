@@ -8,7 +8,7 @@ import {addGun ,subGun , subGunAsync } from './index-redux';
 //将store里面的属性和方法放在props里面   connet()里面有四个参数  最重要的是属性和方法两个
 @connect(
     //你要什么属性放在props里面
-    state=>({ num:state }),
+    state=>({ num:state.counter }),
     //你要什么方法，放在props里面  自动dispatch
     {addGun ,subGun , subGunAsync }
 )
