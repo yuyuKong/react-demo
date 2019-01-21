@@ -91,17 +91,24 @@ applyMiddleware
 
 ####react-redux
 
-`npm install react-reudx --save`
+`npm install react-redux --save`
 
 Provide  Connet
 
 抛弃掉dispatch,也不需要传递所有参数给组件，只需要传递store，组件中不需要接收，不需要subscribe
 
 ######conent装饰器  精简代码
-`npm install babel-plugin-transform-decorators-legacy --save-dev`
+`
+npm install --save-dev @babel/plugin-proposal-class-properties
+`
 
 在package.json里面的babel中配置
-"plugins":["transform-decorators-legacy"]
+`"plugins":[
+     "@babel/plugin-proposal-decorators",
+     {
+       "legacy": true
+     }
+ ]`
 
 
 ###react-router
@@ -139,3 +146,6 @@ Switch     包裹所有path  匹配第一个路由 可用于404页面
     })`
 
 
+###cookie
+express要用到cookie-parser插件来在服务器端使用cookie
+`npm install cookie-parser --save-dev`
