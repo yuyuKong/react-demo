@@ -13,6 +13,20 @@
 ### `npm install -g nodemon`  监听路由和响应内容，自动重启
 ###`nodemon server.js`
 
+如果使用post请求，需要一个插件支持
+`npm install body-parser --save`
+引入
+`const bodyParser from 'body-parser'`
+开启中间件
+`app.use(bodyParser.json())`
+
+###cookie
+express要用到cookie-parser插件来在服务器端使用cookie
+`npm install cookie-parser --save-dev`
+引入
+`const cookieParser from cookie-parser`
+开启中间件
+`app.use(cookieParser())`
 ##mongodb     存储json
 1.在官网下载安装mongodb数据库
 2.`npm install mongoose --save`安装库
@@ -26,6 +40,7 @@ find()  findOne()
 create()
 update()
 remove()
+
 
 ##react基础语法
 组件：
@@ -99,7 +114,7 @@ Provide  Connet
 
 ######conent装饰器  精简代码
 `
-npm install --save-dev @babel/plugin-proposal-class-properties
+npm install --save-dev @babel/plugin-proposal-decorators
 `
 
 在package.json里面的babel中配置
@@ -124,6 +139,9 @@ Redirect   用于重定向  to
 
 Switch     包裹所有path  匹配第一个路由 可用于404页面
 
+如果一个组件不是路由组件，要使用this.props.history,需要引入withRouter从react-router-dom中，然后再使用@withRouter包裹组件class
+
+
 当有多个reducer的时候，新建reducer.js,使用combineReducers合并所有的reducer
 `import { combineReducers } from 'redux'`
 
@@ -146,6 +164,5 @@ Switch     包裹所有path  匹配第一个路由 可用于404页面
     })`
 
 
-###cookie
-express要用到cookie-parser插件来在服务器端使用cookie
-`npm install cookie-parser --save-dev`
+
+
