@@ -27,6 +27,8 @@ express要用到cookie-parser插件来在服务器端使用cookie
 `const cookieParser from cookie-parser`
 开启中间件
 `app.use(cookieParser())`
+浏览器操作cookie
+`npm install browser-cookies --save`
 ##mongodb     存储json
 1.在官网下载安装mongodb数据库
 2.`npm install mongoose --save`安装库
@@ -37,9 +39,10 @@ express要用到cookie-parser插件来在服务器端使用cookie
 3.建立集合  文档   mongoose.model("名称",new mongoose.Schema({字段名：{type:数据类型，require:是否必须}}))
 4.增删改查操作
 find()  findOne()
-create()
+create()   save()
 update()
 remove()
+findByIdAndUpdate()
 
 
 ##react基础语法
@@ -165,4 +168,10 @@ Switch     包裹所有path  匹配第一个路由 可用于404页面
 
 
 
+###加密
+`npm install utility --save`
 
+###属性传递 参数校验
+ `npm install prop-types --save`
+ 
+ 
