@@ -175,3 +175,26 @@ Switch     包裹所有path  匹配第一个路由 可用于404页面
  `npm install prop-types --save`
  
  
+ 
+##Socket.io
+是基于时间的实施双向通信库
+
+ajax：基于http协议（单向  用轮询实现实时更新）
+Socket.io:基于websocket协议（后端可以主动推送数据）
+
+前后端通过事件进行双向通信
+
+#####后端配合express  socket.io库  API
+Io = require('socket.io)(http)
+
+Io.on  监听事件
+
+io.emit   触发事件
+
+#####前端配合express  socket.io-client库  API
+import io from 'socket.io-client'
+
+io.on  监听事件
+
+io.emit   触发事件
+
